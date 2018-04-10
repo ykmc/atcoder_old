@@ -13,4 +13,4 @@ sd = Counter(s)
 td = Counter(t)
 sd.subtract(td)
 
-print(sd.most_common(1)[0][1])
+print(max(sd.most_common(1)[0][1],0))
