@@ -10,5 +10,5 @@ for i in range(10):
             c[j][k] = min(c[j][k], c[j][i]+c[i][k])
 for i in range(10):
     for j in range(H):
-        s = s + A[j].count(i) * c[i][1]
+        s += A[j].count(i) * c[i][1]
 print(s)
