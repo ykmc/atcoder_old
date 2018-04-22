@@ -1,0 +1,5 @@
+A,B,C = int(input()),int(input()),int(input())
+X = sorted([A,B,C],reverse=True)
+print(X.index(A)+1)
+print(X.index(B)+1)
+print(X.index(C)+1)
