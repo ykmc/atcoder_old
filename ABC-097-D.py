@@ -31,6 +31,7 @@ for _ in range(M):
 
 Ans = 0
 for i,p in enumerate(P,1):
-    Ans += 1 if uf.check(i,p) else 0
+    if uf.check(i,p):
+        Ans += 1
 
 print(Ans)
