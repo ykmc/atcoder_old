@@ -14,6 +14,7 @@ while Ri < N:
         while A[Ri] in setA:
             setA.remove(A[Li])
             Li += 1
+        # 条件の調整(右端追加)と答えの更新
         setA.add(A[Ri])
     Ri += 1
 print(Ans)
