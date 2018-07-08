@@ -16,6 +16,7 @@ S,T = S-1,T-1
 # ---------- ---------- ---------- ---------- ---------- ----------
 import heapq
 INF = float("inf")
+# main
 def dijkstra(start, adjList, cost):
     hq = [(0,start)]
     heapq.heapify(hq)
