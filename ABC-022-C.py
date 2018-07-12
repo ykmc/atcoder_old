@@ -12,7 +12,7 @@ for i in range(M):
     else:
         A[u-1,v-1] = A[v-1,u-1] = l
 
-A=spg.floyd_warshall(A)
+A = spg.floyd_warshall(A)
 
 Ans = INF
 for li in L:
