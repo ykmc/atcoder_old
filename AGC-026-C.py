@@ -3,38 +3,31 @@ S = input()
 
 S1,S2 = S[:N],S[N:][::-1]
 
-from itertools import product
-B = list(product([0,1], repeat=N))
-
-D1 = {}
+dic = {}
+keys = []
 Ans = 0
 
-for bb in B:
-    red,blue = "",""
-    cnt = 0
-    for i,b in enumerate(bb):
-        if b == 0:
-            red += S1[i]
-            cnt += 1
+for i in range(2**N):
+    red,blue,red2,blue2 = "","","",""
+    # 半分ずつbit全探索
+    bits = bin(2**N+i)[3:]
+    for j in range(N):
+        if bits[j]=="0":
+            red  += S1[j]
+            red2 += S2[j]
         else:
-            blue += S1[i]
-    key = (cnt,red+blue[::-1])
-    if key not in D1.keys():
-        D1[key] = 1
+            blue += S1[j]
+            blue2 += S2[j]
+    # あとで数える際に使うので記録しておく
+    keys.append(red2+"-"+blue2)
+    # 半分全列挙
+    key = red+"-"+blue
+    if key not in dic.keys():
+        dic[key] = 1
     else:
-        D1[key] += 1
+        dic[key] += 1
 
-for bb in B:
-    red,blue = "",""
-    cnt = 0
-    for i,b in enumerate(bb):
-        if b == 1:
-            red += S2[i]
-            cnt += 1
-        else:
-            blue += S2[i]
-    key = (cnt,red+blue[::-1])
-    if key in D1.keys():
-        Ans += D1[key]
+for key in keys:
+    Ans += dic.get(key,0)
 
 print(Ans)
