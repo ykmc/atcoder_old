@@ -2,7 +2,7 @@ from math import ceil
 N = int(input())
 
 Ans = 0
-for i in range(1,N+1):
+for i in range(1,N+1,2):
     d = []
     limit = ceil(N**.5)
     for j in range(1,limit):
