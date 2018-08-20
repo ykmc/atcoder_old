@@ -1,0 +1,10 @@
+## .gitignore
+# ignore all
+/Rust/
+
+# allow
+!*.py
+!*.rs
+
+# ignore
+test.py
