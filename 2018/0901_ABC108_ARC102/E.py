@@ -1,6 +1,5 @@
 K,N = map(int,input().split())
 
-
 MOD = 998244353
 
 fact = [1]*4000
