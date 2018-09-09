@@ -1,10 +1,13 @@
 ## .gitignore
 # ignore all
-/Rust/
+*
+# allow directory
+!*/
+# allow files with extension
+!*.*
 
-# allow
-!*.py
-!*.rs
+# allow files
+.gitignore
 
 # ignore
 test.py
