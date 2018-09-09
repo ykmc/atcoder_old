@@ -1,6 +1,4 @@
-# AtCoder Beginner Contest 109
-
-https://beta.atcoder.jp/contests/abc109
+# [AtCoder Beginner Contest 109](https://beta.atcoder.jp/contests/abc109)
 
 |   | Task Name      | Score |
 |:-:|:---------------|------:|
