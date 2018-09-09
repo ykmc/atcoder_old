@@ -1,4 +1,4 @@
-# [AtCoder Beginner Contest 106](https://beta.atcoder.jp/contests/abc106)
+# [AtCoder Beginner Contest 106](https://beta.atcoder.jp/contests/abc106/tasks)
 
 | | Task Name | Score |
 |:---:|:---|---:|
