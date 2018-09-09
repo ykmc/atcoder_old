@@ -84,7 +84,5 @@ fn main(){
         }
     }
 
-    
     println!("{}", ans);
 }
-
