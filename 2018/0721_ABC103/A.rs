@@ -73,4 +73,3 @@ fn main(){
     a.sort();
     println!("{}", (a[0]-a[1]).abs() + (a[1]-a[2]).abs());
 }
-
