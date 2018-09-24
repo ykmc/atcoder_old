@@ -5,7 +5,7 @@ y = list(map(int,input().split()))
 Ans = "War"
 maxX = max(x)
 minY = min(y)
-for i in range(maxX,minY+1):
+for i in range(maxX+1,minY+1):
     if X < i <= Y:
         Ans = "No War"
 
