@@ -24,8 +24,8 @@ fn main(){
     let mut ans = 1;
     for (p,cnt) in pf{
         ans = ans * nHr(n,cnt,MOD,&fact,&finv) %MOD;
-        println!("{} {} {}",p,cnt,ans);
     }
+    println!("{}",ans);
 }
 
 fn enum_prime(n: u64) -> Vec<u64>{
@@ -50,13 +50,14 @@ fn prime_factorization(n: u64, primes: &Vec<u64>) -> Vec<(u64,u64)>{
     let mut n = n;
     let mut res = vec![];
     for p in primes{
+        let p: u64 = *p;
         let mut cnt = 0;
         while n%p == 0{
             cnt += 1;
             n /= p;
         }
         if cnt > 0{
-            res.push((*p, cnt));
+            res.push((p, cnt));
         }
     }
     if n > 1{
