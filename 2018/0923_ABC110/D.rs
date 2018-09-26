@@ -22,7 +22,7 @@ fn main(){
     let MOD = 1000000007;
     let (fact,finv,_inv) = init_fact(200000, MOD);
     let mut ans = 1;
-    for (p,cnt) in pf{
+    for (_p,cnt) in pf{
         ans = ans * nHr(n,cnt,MOD,&fact,&finv) %MOD;
     }
     println!("{}",ans);
@@ -46,8 +46,7 @@ fn enum_prime(n: u64) -> Vec<u64>{
     return prime;
 }
 
-fn prime_factorization(n: u64, primes: &Vec<u64>) -> Vec<(u64,u64)>{
-    let mut n = n;
+fn prime_factorization(mut n: u64, primes: &[u64]) -> Vec<(u64,u64)>{
     let mut res = vec![];
     for p in primes{
         let p: u64 = *p;
