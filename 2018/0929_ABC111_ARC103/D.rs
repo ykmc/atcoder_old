@@ -15,6 +15,7 @@ fn main(){
         n: usize,
         xy: [(i64,i64); n],
     }
+    let mut xy = xy;
     // パリティのチェック
     let mut even = 0;
     let mut odd = 0;
@@ -25,8 +26,75 @@ fn main(){
             odd += 1;
         }
     }
+    // パリティが0,1混在の場合は実現不可能
     if even>0 && odd>0 {
         println!("{}", -1);
         return;
     }
+    // パリティが0の場合 → X座標を-1することでパリティが1の場合に帰着、後で調整必要
+    if even>0 {
+        for i in 0..n{
+            xy[i].0 -= 1;
+        }
+    }
+    // アームを準備
+    let mut arms = vec![];
+    for i in 0..35 {
+        arms.push(2_i64.pow(i));
+    }
+    arms.sort_by(|a,b| b.cmp(a));
+    // 順番に処理
+    let mut Ans: Vec<Vec<char>> = vec![];
+    for i in 0..n {
+        let mut ans: Vec<char> = vec![];
+        let (mut x, mut y) = (xy[i].0, xy[i].1);
+        let (mut x0, mut y0) = (0,0);
+        for arm in &arms {
+            let tx = x - x0;
+            let ty = y - y0;
+            if &ty < &tx && &ty > &-tx {
+                ans.push('R');
+                x0 += *arm;
+            }else if &ty<&tx && &ty<&-tx {
+                ans.push('D');
+                y0 -= *arm;
+            }else if &ty>&tx && &ty<&-tx{
+                ans.push('L');
+                x0 -= *arm;
+            }else{
+                ans.push('U');
+                y0 += *arm;
+            }
+        }
+        Ans.push(ans);
+    }
+    // パリティが0の場合、長さ1のアームを追加して、操作の最後にRを追加
+    if even>0 {
+        arms.push(1);
+        println!("{}", arms.len());
+        for arm in arms {
+            print!("{} ", arm);
+        }
+        println!();
+        for ans in Ans {
+            for c in ans {
+                print!("{}", c);
+            }
+            println!("{}", 'R');
+        }
+    }else{
+        println!("{}", arms.len());
+        for arm in arms {
+            print!("{} ", arm);
+        }
+        println!();
+        for ans in Ans {
+            for c in ans {
+                print!("{}", c);
+            }
+            println!();
+        }
+    }
 }
+
+
