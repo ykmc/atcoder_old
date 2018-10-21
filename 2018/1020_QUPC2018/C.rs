@@ -7,8 +7,7 @@ macro_rules! read_value { ($next:expr, ( $($t:tt),* )) => { ( $(read_value!($nex
 
 // Module
 use std::cmp::{min,max};
-use std::collections::{HashSet,BTreeMap};
-use std::collections::VecDeque;
+use std::collections::{HashSet,BTreeMap,VecDeque};
 
 // Main
 fn main(){
