@@ -9,7 +9,6 @@
 # allow files
 .gitignore
 
-# ignore
-test.py
-Rust/test.rs
-Rust/test.py
+# ignore yarn(npm) modules and log files
+node_modules
+*.log
