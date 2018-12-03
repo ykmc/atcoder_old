@@ -1,13 +1,16 @@
 ## .gitignore
+
 # ignore all
 *
+
 # allow directory
 !*/
+
 # allow files with extension
 !*.*
 
 # allow files
-.gitignore
+!.gitignore
 
 # ignore yarn(npm) modules and log files
 node_modules
