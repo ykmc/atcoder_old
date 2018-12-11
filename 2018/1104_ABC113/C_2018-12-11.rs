@@ -12,8 +12,28 @@ use std::collections::{HashSet,BTreeMap,VecDeque};
 // Main
 fn main(){
     input!{
-        X: u32,
-        Y: u32,
+        N: usize,
+        M: usize,
+        PY: [(usize,u64); M],
     }
-    println!("{}", X+Y/2);
+    // P(県)別にVecにまとめる、その際に何番目のデータかを一緒に記録しておく
+    let mut v = vec![vec![(0,0);0]; N];
+    for (i, py) in PY.iter().enumerate(){
+        v[py.0 -1].push((py.1,i));
+    }
+    // それぞれソートする
+    for i in 0..N{
+        v[i].sort();
+    }
+    // 出力用に、最初のデータ順にまとめて
+    let mut ans = vec![(0,0) ;M];
+    for i in 0..N{
+        for j in 0..v[i].len(){
+            ans[v[i][j].1] = (i+1, j+1);
+        }
+    }
+    // 出力する
+    for i in 0..M{
+        println!("{:06}{:06}",ans[i].0, ans[i].1);
+    }
 }

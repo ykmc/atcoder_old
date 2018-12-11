@@ -1,4 +1,4 @@
-#![allow(non_snake_case, unused_macros, unused_imports)]
+#![allow(non_snake_case, unused_imports)]
 
 // Input
 macro_rules! input { (source = $s:expr, $($r:tt)*) => { let mut iter = $s.split_whitespace(); let mut next = || { iter.next().unwrap() }; input_inner!{next, $($r)*} }; ($($r:tt)*) => { let stdin = std::io::stdin(); let mut bytes = std::io::Read::bytes(std::io::BufReader::new(stdin.lock())); let mut next = move || -> String{ bytes.by_ref().map(|r|r.unwrap() as char).skip_while(|c|c.is_whitespace()).take_while(|c|!c.is_whitespace()).collect() }; input_inner!{next, $($r)*} }; }
@@ -16,7 +16,6 @@ fn main(){
         W: usize,
         K: usize,
     }
-    
 
     // 左隣(あるいは右隣)にn本の縦棒があり、真横と繋がっている時の場合の数
     let j = vec![0,1,1,2,3,5,8,13];
@@ -45,6 +44,7 @@ fn main(){
             dp[h][w] %= 1_000_000_007;
         }
     }
-    
+
+    // K番目 は0-indexedであることに注意
     println!("{}", dp[H][K-1]);
 }
