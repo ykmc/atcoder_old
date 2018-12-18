@@ -1,4 +1,4 @@
-#![allow(non_snake_case, unused_macros, unused_imports)]
+#![allow(non_snake_case, unused_imports)]
 
 // Input
 macro_rules! input { (source = $s:expr, $($r:tt)*) => { let mut iter = $s.split_whitespace(); let mut next = || { iter.next().unwrap() }; input_inner!{next, $($r)*} }; ($($r:tt)*) => { let stdin = std::io::stdin(); let mut bytes = std::io::Read::bytes(std::io::BufReader::new(stdin.lock())); let mut next = move || -> String{ bytes.by_ref().map(|r|r.unwrap() as char).skip_while(|c|c.is_whitespace()).take_while(|c|!c.is_whitespace()).collect() }; input_inner!{next, $($r)*} }; }
@@ -7,25 +7,27 @@ macro_rules! read_value { ($next:expr, ( $($t:tt),* )) => { ( $(read_value!($nex
 
 // Module
 use std::cmp::{min,max};
-use std::collections::{HashSet,BTreeMap};
+use std::collections::{HashSet,BTreeMap,VecDeque};
+
+// Functions
 
 // Main
 fn main(){
     input!{
-        n: usize,
-        t: i32,
-        ct: [(i32,i32); n]
+        S: chars,
     }
-    let mut ans = 9999;
-    for i in 0..n{
-        if ct[i].1 <= t{
-            ans = min(ans, ct[i].0);
+    // 型を指定すること！
+    let mut ans:u64 = 0;
+    let mut white:u64 = 0;
+    // 後ろから見ていき、黒について、自身より後ろにある白の数だけ操作可能
+    let N = S.len();
+    for i in 0..N{
+        if S[N-1-i]=='B'{
+            ans += white;
+        }else{
+            white += 1;
         }
     }
-    if ans==9999{
-        println!("{}", "TLE");
-    }else{
-        println!("{}", ans);
-    }
-}
 
+    println!("{}", ans);
+}
