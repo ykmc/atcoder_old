@@ -8,9 +8,9 @@ dp[0][0][0] = 1
 for n in range(1,N+1):
     for k in range(n+1):
         for s in range(50*k+1):
-            if n>=1 and s<X[n]:
+            if s<X[n]:
                 dp[n][k][s] = dp[n-1][k][s]
-            elif n>=1 and k>=1 and s>=X[n]:
+            elif k>=1 and s>=X[n]:
                 dp[n][k][s] = dp[n-1][k][s] + dp[n-1][k-1][s-X[n]]
 
 Ans = 0
