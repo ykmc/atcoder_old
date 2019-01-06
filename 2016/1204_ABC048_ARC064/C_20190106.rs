@@ -31,6 +31,5 @@ fn main(){
         ans += r;
         A[i] -= r;
     }
-
     println!("{}", ans);
 }
