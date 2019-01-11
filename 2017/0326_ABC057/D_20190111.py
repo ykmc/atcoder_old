@@ -38,5 +38,4 @@ else:
             ans2 *= c-i
             ans2 //= i+1
 
-
 print(ans1, ans2)
