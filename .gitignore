@@ -15,3 +15,7 @@
 # ignore yarn(npm) modules and log files
 node_modules
 *.log
+
+# ignore tools and source
+git.py
+source
