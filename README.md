@@ -33,13 +33,23 @@ atcoderのコンテスト提出・過去問提出を管理するためのリポ�
 
 ### 命名規則
 
-| コンテスト略称 | コンテスト正式名称 | 主催 |
-|----------|--------------------------------|----------|
-| CF       | CODE FESTIVAL                  | Recruit  |
-| CTF      | CODE THANKS FESTIVAL           | Recruit  |
-| BitFlyer | codeFlyer                      | bitFlyer |
+#### コンテスト名を利用
+
+| コンテスト略称 | コンテスト正式名称           | 主催     |
+|----------|------------------------------------|----------|
+| CF       | CODE FESTIVAL                      | Recruit  |
+| CTF      | CODE THANKS FESTIVAL               | Recruit  |
+| T1PC     | Tenka1 Programmer Contest          | KLab     |
 | DDCC     | DISCO presents ディスカバリーチャンネル コードコンテスト         | DISCO |
 | DDCP     | DISCO presents ディスカバリーチャンネル プログラミングコンテスト | DISCO |
-| Yahoo    | みんなのプロコン               | Yahoo    |
-| Nikkei   | 全国統一プログラミング王決定戦 | 日経新聞 |
 
+#### 企業名を利用
+
+| コンテスト略称 | コンテスト正式名称 | 主催 |
+|----------|--------------------------------|----------|
+| AISing   | AISing Programming Contest     | AISing | 
+| BitFlyer | codeFlyer                      | bitFlyer |
+| CADDi    | CADDi                          | CADDi   |
+| Yahoo    | みんなのプロコン               | Yahoo!    |
+| Keyence  | KEYENCE Programming Contest    | キーエンス |
+| Nikkei   | 全国統一プログラミング王決定戦 | 日経新聞 |
