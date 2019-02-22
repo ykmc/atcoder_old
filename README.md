@@ -40,7 +40,7 @@ atcoderのコンテスト提出・過去問提出を管理するためのリポ�
 
 ### 企業
 
-| コンテスト略称 | コンテスト正式名称       | 主催       |
+| コンテスト略称 | コンテスト正式名称         | 主催       |
 |------------|--------------------------------|------------|
 | AISing     | AISing Programming Contest     | AISing     | 
 | BitFlyer   | codeFlyer                      | bitFlyer   |
