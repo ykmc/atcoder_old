@@ -23,3 +23,4 @@ dfs(K-1,N,0)
 
 for (x,y) in B:
     print(dist[x-1]+dist[y-1])
+
