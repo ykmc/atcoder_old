@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(1000000)
+
 def dfs(n,p,d):
     visited[n] = True
     dist[n] = d
